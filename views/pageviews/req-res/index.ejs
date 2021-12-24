@@ -1,0 +1,10 @@
+<main class="gp-tabs">
+    <nav class="gp-tabs__links">
+        <a href="#" role="button" class="gp-tabs__link gp-tabs__link--active" target="page-view" data-type="req">Request</a>
+        <a href="#" role="button" class="gp-tabs__link" target="page-view"  data-type="res">Response</a>
+    </nav>
+    <% if (locals) { %>
+        <%- include('req-view.ejs'); -%>
+        <%- include('res-view.ejs'); -%>
+    <% } %>
+</main>

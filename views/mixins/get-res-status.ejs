@@ -1,0 +1,16 @@
+<%
+getResStatus = function(res) {
+    let status = 'default'
+    if (res.statusCode >= 500) {
+        status = 'danger'
+    } else if (res.statusCode >= 400) {
+        status = 'warning'
+    } else if (res.statusCode >= 300) {
+        status = 'info'
+    } else if (res.statusCode >= 200) {
+        status = 'success'
+    }
+
+    return status;
+}
+%>

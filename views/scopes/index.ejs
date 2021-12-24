@@ -1,0 +1,32 @@
+<%- include('../layout/head.ejs', { tags: ['scopes'] }) -%>
+    <main>
+        <%- include('./header.ejs') -%>
+        <section class="layout-navside">
+            <%- include('./nav-side/nav-side.ejs') -%>
+            <iframe name="page-view" id="page-view" class="layout-navside__items">
+            </iframe>
+        </section>
+    </main>
+    <script>
+        const iframe = document.getElementById('page-view'),
+        iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+
+        iframedoc.body.innerHTML = `<%- pageView.template -%>`
+
+        const defaultStyles = document.createElement('style');
+        defaultStyles.innerHTML = `<%- defaults.styles -%>`;
+        iframedoc.head.appendChild(defaultStyles)
+
+        const pageStyles = document.createElement('style');
+        pageStyles.innerHTML = `<%- pageView.styles -%>`;
+        iframedoc.head.appendChild(pageStyles)
+
+        const defaultScript = document.createElement('script');
+        defaultScript.innerHTML = `<%- defaults.script -%>`;
+        iframedoc.body.appendChild(defaultScript)
+
+        const pageScript = document.createElement('script');
+        pageScript.innerHTML = `<%- pageView.script -%>`;
+        iframedoc.body.appendChild(pageScript)
+    </script>
+<%- include('../layout/foot.ejs') -%>

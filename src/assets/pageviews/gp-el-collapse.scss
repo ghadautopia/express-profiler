@@ -1,0 +1,30 @@
+.gp-el-collapse__header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid $colorGreyDark;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.gp-el-collapse__content {
+    overflow: hidden;
+    max-height: 0;
+}
+
+.gp-el-collapse {
+    padding-bottom: 5px;
+
+    &.gp-el-collapse--expanded {
+        .gp-el-collapse__header {
+            border-radius: 5px 5px 0 0;
+        }
+
+        .gp-el-collapse__content {
+            max-height: max-content;
+            border: 1px dashed $colorGrey;
+            border-radius: 0 0 5px 5px;
+        }
+    }
+}
+

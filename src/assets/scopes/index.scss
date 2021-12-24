@@ -1,0 +1,50 @@
+@import '../common/base';
+
+.header-page {
+    color: $colorWhite;
+    overflow: auto;
+
+    &.bg-info,
+    &.bg-warning {
+        color: $colorBlack;
+    }
+
+    &__info {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 0.95rem;
+        margin: 15px 0 5px 0;
+
+        dt {
+            padding-right: 5px;
+        }
+
+        dd {            
+            padding-right: 10px;
+            margin: 0;
+            font-weight: 700;
+        }
+    }
+}
+
+.layout-navside__nav__el {
+    font-size: 16px;
+
+    &:hover {
+        background-color: $colorPurple;
+        color: $colorWhite;
+    }
+
+    svg {
+        margin-right: 5px;
+        fill: currentColor;
+    }
+}
+
+.layout-navside__items {
+    padding: 0;
+}
+
+#page-view {
+    height: 100%;
+}

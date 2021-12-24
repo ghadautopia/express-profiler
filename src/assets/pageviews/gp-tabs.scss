@@ -1,0 +1,38 @@
+.gp-tabs__links {
+    display: flex;
+}
+
+.gp-tabs__link {
+    display: block;
+    padding: 10px;
+    color: $colorBlack;
+    text-decoration: none;
+    transition: all .1s;
+    position: relative;
+}
+
+.gp-tabs__link.gp-tabs__link--active {
+    background-color: $colorWhite;
+    border: 1px solid $colorGreyDark;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -1px;
+        right: 0;
+        left: 0;
+        border-bottom: 1px solid $colorWhite;
+        width: 100%;
+    }
+}
+
+.gp-tabs__content {
+    border: 1px solid $colorGreyDark;
+    padding: 10px;
+    border-radius: 0 5px 5px 5px;
+    overflow: auto;
+}
+

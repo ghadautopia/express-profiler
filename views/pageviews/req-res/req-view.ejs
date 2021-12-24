@@ -1,0 +1,31 @@
+<%- include('../../mixins/format-timestamp.ejs') -%>
+
+<section class="gp-tabs__content">
+    <%- include('../gp-el-dl.ejs', { title: 'Headers', content: locals.data.req.headers }) -%>
+    <%- include('../gp-el-dl.ejs', { title: 'Trailers', content: locals.data.req.trailers }) -%>
+    <%- include('../gp-el-dl.ejs', { title: 'Path', content: {
+        URL: locals.data.req.url,
+        'Base URL': locals.data.req.baseUrl,
+        'Original URL': locals.data.req.originalUrl,
+        'Remote Address': locals.data.req.remoteAddress,
+        'Remote IP Family': locals.data.req.remoteFamily,
+        'Remote Port': locals.data.req.remotePort,
+        'Local Address': locals.data.req.localAddress,
+        'Local Port': locals.data.req.localPort,
+        'HTTP Version': locals.data.req.httpVersion,
+    } }) -%>
+    <%- include('../gp-el.ejs', { title: 'Query', content: locals.data.req.query }) -%>
+    <%- include('../gp-el.ejs', { title: 'Params', content: locals.data.req.params }) -%>
+    <%- include('../gp-el.ejs', { title: 'Cookies', content: locals.data.req.cookies }) -%>
+    <%- include('../gp-el.ejs', { title: 'Signed Cookies', content: locals.data.req.signedCookies }) -%>
+    <%- include('../gp-el.ejs', { title: 'Body', content: locals.data.req.body }) -%>
+    <%- include('../gp-el-dl.ejs', { title: 'Status', content: {
+        'Status Code': locals.data.req.statusCode,
+        'Status Message': locals.data.req.statusMessage,
+        'Aborted': locals.data.req.aborted
+    } }) -%>
+    <%- include('../gp-el-dl.ejs', { title: 'Time', content: {
+        'Start Time': `${formatTimestamp(locals.data.req._startTime)} (${locals.data.req._startTime})`,
+    } }) -%>
+    <%- include('../gp-el.ejs', { title: 'Raw', content: locals.data.req }) -%>    
+</section>

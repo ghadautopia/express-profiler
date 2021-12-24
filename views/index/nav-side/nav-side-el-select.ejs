@@ -1,0 +1,10 @@
+<fieldset class="layout-navside__nav__el">
+    <label><%= label %></label>
+    <select name="<%= name %>">
+        <% options.forEach((opt) => { %>
+            <option value="<%=opt %>" 
+                <% if (opt == value) { %>selected<% } %>
+            ><%=opt %></option>
+        <% }); %>
+    </select>
+</fieldset>

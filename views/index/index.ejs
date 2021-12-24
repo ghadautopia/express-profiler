@@ -1,0 +1,21 @@
+<% let firstItem = ((page - 1) * itemsPerPage) + 1 %>
+<% firstItem = firstItem > pages.totalItems ? pages.totalItems : firstItem %>
+<% let lastItem = firstItem + itemsPerPage - 1 %>
+<% lastItem = lastItem > pages.totalItems ? pages.totalItems : lastItem %>
+
+<%- include('../layout/head.ejs', { tags: ['index'] }) -%>
+<main>
+    <header class="container header-page">
+        <h2>Requests Search</h2>
+        <% if (pages && firstItem != lastItem) { %>
+            <h3>
+                <%= firstItem %> - <%= lastItem %> of <%=pages.totalItems %> requests
+            </h3>
+        <% } %>
+    </header>
+    <section class="layout-navside">
+        <%- include('./nav-side/nav-side.ejs') -%>
+        <%- include('./items/items.ejs') -%>
+    </section>
+</main>
+<%- include('../layout/foot.ejs') -%>

@@ -1,0 +1,8 @@
+<%- include('../../mixins/get-scope-url') -%>
+
+<a class="layout-navside__nav__el <%= tabData.name == scopeName ? 'active' : '' %>" href="<%=getScopeUrl(token, tabData.name) %>">
+    <% if (tabData.svg) { %>
+        <%- tabData.svg -%>
+    <% } %>
+    <%= tabData.title %>
+</a>

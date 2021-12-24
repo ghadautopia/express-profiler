@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400&display=swap');
+@import '../common/vars';
+@import '../common/reset';
+@import '../common/utils';
+@import './gp-tabs';
+@import './gp-el';
+@import './gp-el-collapse';
+
+html, body {
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    padding: 10px;
+    
+    * {
+        box-sizing: border-box;
+    }
+}

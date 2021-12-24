@@ -1,0 +1,29 @@
+<%- include('../../mixins/get-scope-url.ejs') -%>
+<%- include('../../mixins/get-req-url.ejs') -%>
+<%- include('../../mixins/get-res-status.ejs') -%>
+<%- include('../../mixins/format-timestamp.ejs') -%>
+
+<% const href = getScopeUrl(item.token, 'req-res') %>
+<% const status = getResStatus(item.data) %>
+<% const page = getReqUrl(item.data.req) %>
+
+<tr class="layout-navside__items__item">
+    <td title="<%= formatTimestamp(+item.time) %>">
+        <%= formatTimestamp(+item.time) %>
+    </td>
+    <td title="<%= item.data.statusCode %>" class="bg-<%= status %> color-white">
+        <%= item.data.statusCode %>
+    </td>
+    <td title="<%= item.data.req.method %>">
+        <%= item.data.req.method %>
+    </td>
+    <td title="<%= item.data.req.protocol %>://<%= item.data.req.headers.host %>">
+        <a href="<%= page %>" target="_blank"><%= page %></a>
+    </td>
+    <td title="<%= item.data.req.remoteAddress %>">
+        <%= item.data.req.remoteAddress %>
+    </td>
+    <td>
+        <a href="<%= href %>" target="_blank" title="<%= item.token %>"><code><%= item.token %></code></a>
+    </td>
+</tr>

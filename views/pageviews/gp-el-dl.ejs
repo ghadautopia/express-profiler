@@ -1,0 +1,9 @@
+<article class="gp-el">
+    <h3 class="gp-el__header"><%= title %></h3>
+    <dl class="gp-el__content">
+        <% Object.entries(content).forEach(([key, value]) => { %>
+            <dt><%= key %></dt>
+            <dd><%= typeof value === 'object' ? JSON.stringify(value) : value %></dd>
+        <% }); %>
+    </dl>
+</article>

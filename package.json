@@ -1,0 +1,60 @@
+{
+  "name": "@ghadautopia/express-profiler",
+  "version": "1.0.0",
+  "description": "Ghada Express Profiler",
+  "author": "Mahmoud Elbayoumy",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ghadautopia/express-profiler.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "views",
+    "public"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && npm run build:assets && npm run build:server",
+    "build:assets": "webpack --mode=production --node-env=production",
+    "build:server": "tsc --project ./tsconfig.server.json",
+    "watch": "npm run watch:assets & npm run watch:server",
+    "watch:assets": "webpack --watch",
+    "watch:server": "tsc --watch --project ./tsconfig.server.json",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/ejs": "^3.1.0",
+    "@types/express": "^4.17.13",
+    "@types/on-finished": "^2.3.1",
+    "@types/response-time": "^2.3.5",
+    "@types/sqlite3": "^3.1.7",
+    "@types/uuid": "^8.3.3",
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/parser": "^5.6.0",
+    "ajv": "^8.8.2",
+    "css-loader": "^6.5.1",
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.4.5",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1",
+    "sass": "^1.43.5",
+    "sass-loader": "^12.3.0",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.2",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "on-finished": "^2.3.0",
+    "response-time": "^2.3.2",
+    "sqlite3": "^5.0.2",
+    "uuid": "^8.3.2"
+  }
+}

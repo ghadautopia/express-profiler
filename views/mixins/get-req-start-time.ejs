@@ -1,0 +1,7 @@
+<%- include('./format-timestamp.ejs') -%>
+
+<%
+getReqStartTime = function (req) {
+    return req._startTime ? formatTimestamp(req._startTime) : '-';
+}
+%>

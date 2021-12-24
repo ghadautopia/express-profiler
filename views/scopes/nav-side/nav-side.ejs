@@ -1,0 +1,7 @@
+<aside class="layout-navside__nav">
+    <nav>
+        <% tabsData.forEach(tabData => { %>
+            <%- include('./nav-side-el.ejs', { tabData }) -%>
+        <% }); %>
+    </nav>
+</aside>

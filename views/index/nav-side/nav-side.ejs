@@ -1,0 +1,19 @@
+<aside class="layout-navside__nav">
+    <nav>
+        <form>
+            <!-- <h2 class="layout-navside__nav__title">Requests Search</h2> -->
+            <%- include('./nav-side-el.ejs', { label: 'IP', name: 'ip', type: 'text', value: query.ip }) -%>
+            <%- include('./nav-side-el.ejs', { label: 'Method', name: 'method', type: 'text', value: query.method }) -%>
+            <%- include('./nav-side-el.ejs', { label: 'Status', name: 'status', type: 'text', value: query.status }) -%>
+            <%- include('./nav-side-el.ejs', { label: 'URL', name: 'url', type: 'text', value: query.url }) -%>
+            <%- include('./nav-side-el.ejs', { label: 'Token', name: 'token', type: 'text', value: query.token }) -%>
+            <%- include('./nav-side-el.ejs', { label: 'From', name: 'from', type: 'date', value: query.from }) -%>
+            <%- include('./nav-side-el.ejs', { label: 'Till', name: 'till', type: 'date', value: query.till }) -%>
+            <% if (pages) { %>
+            <%- include('./nav-side-el-select.ejs', { label: 'Page', name: 'page', options: [...(new Array(pages.total + 1).keys())].slice(1), value: page }) -%>
+            <%- include('./nav-side-el-select.ejs', { label: 'Items Per Page', name: 'itemsPerPage', options: [50, 100, 200], value: itemsPerPage }) -%>
+            <% } %>
+            <button role="submit">Search</button>
+        </form>
+    </nav>
+</aside>

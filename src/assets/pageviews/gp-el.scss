@@ -1,0 +1,29 @@
+.gp-el {
+    padding-bottom: 10px;
+}
+
+.gp-el__header {
+    margin: 0;
+    padding-bottom: 5px;
+}
+
+.gp-el__content {
+    margin: 0;
+    border: 1px dashed $colorBlack;
+    border-radius: 7px;
+    padding: 5px;
+    overflow: auto;
+}
+
+.gp-el__content dd {
+    margin-right: 15px;
+}
+
+.gp-el__content dt {
+    color: $colorInfoDark;
+}
+
+.article__content dt::after {
+    content: ':';
+    color: $colorInfoDark;
+}

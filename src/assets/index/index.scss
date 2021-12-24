@@ -1,0 +1,12 @@
+@import '../common/base';
+
+.header-page {
+    background: $colorGreyLight;
+    color: $colorBlack;
+    display: flex;
+    justify-content: space-between;
+}
+
+.layout-navside__nav__el {
+    justify-content: space-between;
+}

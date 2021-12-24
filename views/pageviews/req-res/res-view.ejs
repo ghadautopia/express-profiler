@@ -1,0 +1,15 @@
+<%- include('../../mixins/format-timestamp.ejs') -%>
+
+<section class="gp-tabs__content" style="display: none;">
+    <%- include('../gp-el-dl.ejs', { title: 'Headers', content: locals.data.headers }) -%>
+    <%- include('../gp-el-dl.ejs', { title: 'Status', content: {
+        'Status Message': locals.data.statusMessage,
+        'Status Code': locals.data.statusCode,
+    } }) -%>
+    <%- include('../gp-el.ejs', { title: 'Body', content: locals.data.body }) -%>
+    <%- include('../gp-el-dl.ejs', { title: 'Locals', content: locals.data.locals }) -%>
+    <%- include('../gp-el-dl.ejs', { title: 'Time', content: {
+        'Start Time': `${formatTimestamp(locals.data._startTime)} (${locals.data._startTime})`
+    } }) -%>
+    <%- include('../gp-el.ejs', { title: 'Raw', content: locals.data }) -%>
+</section>

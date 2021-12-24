@@ -1,0 +1,19 @@
+<section class="layout-navside__items" role="contentinfo">
+    <table>
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Status</th>
+                <th>Method</th>
+                <th>URL</th>
+                <th>IP</th>
+                <th>Token</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% (items || []).forEach(item => { %>
+                <%- include('./item.ejs', { item }) -%>
+            <% }); %>
+        </tbody>
+    </table>
+</section>

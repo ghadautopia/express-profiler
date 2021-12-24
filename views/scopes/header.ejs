@@ -1,0 +1,24 @@
+<%- include('../mixins/get-req-url.ejs') -%>
+<%- include('../mixins/get-res-status.ejs') -%>
+<%- include('../mixins/get-req-start-time.ejs') -%>
+<%- include('../mixins/format-timestamp.ejs') -%>
+
+<header class="header-page container bg-<%= getResStatus(reqRes.data) %>">
+    <h2><%=getReqUrl(reqRes.data.req) %></h2>
+    <dl class="header-page__info" role="contentinfo">
+        <dt>Method:</dt>
+        <dd><%= reqRes.data.req.method %></dd>
+        <dt>Status:</dt>
+        <dd><%= reqRes.data.statusCode %></dd>
+        <dt>IP:</dt>
+        <dd><%= reqRes.data.req.remoteAddress %></dd>
+        <dt>Token:</dt>
+        <dd><%= reqRes.token %></dd>
+        <dt>Started At:</dt>
+        <dd><%= getReqStartTime(reqRes.data.req) %></dd>
+        <dt>Profiled At:</dt>
+        <dd><%= formatTimestamp(+reqRes.time) %></dd>
+        <dt>Req->Res Time:</dt>
+        <dd><%= reqRes.data.headers['x-response-time'] %> ms</dd>
+      </dl>
+</header>

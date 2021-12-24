@@ -1,0 +1,6 @@
+<article class="gp-el">
+    <h3 class="gp-el__header"><%= title %></h3>
+    <section class="gp-el__content">
+        <%= typeof content === 'object' ? JSON.stringify(content) : content %>
+    </section>
+</article>
