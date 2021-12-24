@@ -5,7 +5,7 @@ Its main target is to make debugging easier for  applications built using [Expre
 
 ## Works with
 
-- `Express` version of `4`
+- `Express` version `4`
 
 ## Dependencies
 
