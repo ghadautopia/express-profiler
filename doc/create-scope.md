@@ -157,11 +157,15 @@ The scope mainly responsible for rendering:
 
 - The scope toolbar slot in `Ghada Express Profiler` toolbar (__optional__)
 
-![toolbar view](images/create-scope-toolbar.png){#img_toolbar}
+### toolbar image
+
+![toolbar view](images/create-scope-toolbar.png)
 
 - The scope pageview (__optional__)
 
-![page view](images/create-scope-page-view.png){#img_pageview}
+### pageview image
+
+![page view](images/create-scope-page-view.png)
 
 The scope should be located in `src/scope.ts`. Check [Axios scope][URL_scopes_axios_scope]
 
@@ -295,8 +299,8 @@ Please add a __README.md__ file to your package. You can refer to [Axios scope r
    [URL_mixin_get-res-status]: <https://github.com/ghadautopia/express-profiler/blob/main/views/mixins/get-res-status.ejs>
    [URL_mixin_get-scope-url]: <https://github.com/ghadautopia/express-profiler/blob/main/views/mixins/get-scope-url.ejs>
 
-   [REF-IMG_toolbar]: <#img_toolbar>
-   [REF-IMG_pageview]: <#img_pageview>
+   [REF-IMG_toolbar]: <#toolbar-image>
+   [REF-IMG_pageview]: <#pageview-image>
    [REF_streamsdata-structure]: <#streamsdata-structure>
    [REF_toolbarslotdata-props]: <#toolbarslotdata-props>
    [REF_pagetabdata-props]: <#pagetabdata-props>
